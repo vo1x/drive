@@ -1,14 +1,18 @@
 {
-  "name": "api.gdrive.vercel.app",
-  "version": "1.0.0",
-  "main": "api/index.js",
-  "scripts": {
-    "start": "bun run src/index.js",
-    "dev": "bun --watch run src/index.js"
-  },
   "dependencies": {
-    "express": "^4.18.2",
-    "dotenv": "^16.3.1",
-    "node-fetch": "^3.3.2"
+    "cheerio": "^1.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  },
+  "scripts": {
+    "dev": "bun --watch src/app.ts",
+    "build": "bun run tsc",
+    "start": "node dist/server.js"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.5",
+    "typescript": "^5.7.3"
   }
 }
