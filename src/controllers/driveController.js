@@ -1,4 +1,7 @@
-import { config } from "../config";
+const config = {
+  googleApiKey: process.env.GOOGLE_API_KEY,
+  baseUrl: "https://www.googleapis.com/drive/v3",
+};
 
 async function getFileInfo(fileId) {
   const url = `${config.baseUrl}/files/${fileId}?key=${config.googleApiKey}&supportsAllDrives=true&includeItemsFromAllDrives=true&fields=id,name,size,webContentLink,mimeType`;
