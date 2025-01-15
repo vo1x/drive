@@ -1,16 +1,19 @@
+// api/index.js
 import express from "express";
-
 import router from "./routes/index.js";
 
 const app = express();
-const port = process.env.PORT || 3000;
 
 app.use(express.json());
-
 app.use("/", router);
 
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
-});
+// For local development
+if (process.env.NODE_ENV !== 'production') {
+  const port = process.env.PORT || 3000;
+  app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`);
+  });
+}
 
-module.exports = app;
+// Export for Vercel
+export default app;
