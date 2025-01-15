@@ -53,7 +53,7 @@ export const driveController = {
         success: true,
         status: 200,
         info: itemInfo,
-        data: processedItems,
+        content: processedItems,
       });
     } catch (error) {
       console.error("Error extracting content:", error);
